@@ -62,7 +62,7 @@ setInterval(() => {
  * ==========================================================================
  */
 const getStations = (city = "Lyon") => {
-  const API_KEY_PERSO = "your_secret_api_key_here";
+  const API_KEY_PERSO = "🚧 VOTRE API KEY ICI";
 
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function () {
