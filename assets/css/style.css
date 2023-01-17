@@ -1,0 +1,13 @@
+body {
+  max-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.map__container {
+  height: 600px;
+  margin: 25px auto;
+  border: 4px solid #333;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #000;
+}
