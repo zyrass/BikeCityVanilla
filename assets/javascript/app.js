@@ -7,9 +7,11 @@
  */
 const h1 = document.getElementsByTagName("h1")[0];
 const p = document.getElementById("paragraphePresention");
-const btn = document.getElementById("btnShowMap");
 const root = document.querySelector(".map__container");
 const date = document.querySelector("#date");
+const buttons = document.querySelectorAll("button");
+
+let map;
 
 /**
  * ==========================================================================
@@ -30,14 +32,40 @@ p.innerText =
 
 /**
  * ==========================================================================
- * BUTTON SHOW MAP
+ * AJOUR D'UN STYLE CSS POUR LE PARAGRAPHE
  * ==========================================================================
  */
-btn.addEventListener("click", (e) => {
-  e.preventDefault();
-  getStations();
-  // getStations("Marseille");
-});
+p.style.letterSpacing = "1.4px";
+
+/**
+ * ==========================================================================
+ * AJOUT D'UNE CLASS
+ * ==========================================================================
+ */
+p.classList.add("jeSuisUneClassCreeEnJsEtStylyseeEnCSS");
+
+/**
+ * ==========================================================================
+ * BOUCLE SUR TOUT LES BOUTONS
+ * ==========================================================================
+ */
+for (let i = 0; i < buttons.length; i++) {
+  /**
+   * ==========================================================================
+   * EACH BUTTON SHOW MAP
+   * ==========================================================================
+   */
+  buttons[i].addEventListener("click", (e) => {
+    e.preventDefault();
+    if (buttons[i] == buttons[0]) {
+      getStations("Lyon");
+    } else if (buttons[i] == buttons[1]) {
+      getStations("Marseille");
+    } else if (buttons[i] == buttons[2]) {
+      getStations("Creteil");
+    }
+  });
+}
 
 /**
  * ==========================================================================
@@ -58,18 +86,45 @@ setInterval(() => {
 
 /**
  * ==========================================================================
- * FONCTION
+ * FONCTION AVEC OBJET XMLHTTPREQUEST
  * ==========================================================================
  */
 const getStations = (city = "Lyon") => {
-  const API_KEY_PERSO = "🚧 VOTRE API KEY ICI";
+  const API_KEY_PERSO = "...";
 
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function () {
-    const map = L.map("root").setView(
-      [45.779848493795605, 4.750634469274379],
-      13
-    );
+    if (city == "Lyon") {
+      try {
+        map = L.map("root").setView(
+          [45.779848493795605, 4.750634469274379],
+          13
+        );
+        marker = L.marker([45.779848493795605, 4.750634469274379])
+          .addTo(map)
+          .bindPopup(
+            "<b>Campus Région Numérique</b><br /><strong>IT-AKADEMY et les DFS26C ;)</strong>"
+          )
+          .openPopup();
+      } catch (error) {
+        console.log(error);
+      }
+    } else if (city == "Marseille") {
+      try {
+        map = L.map("root").setView(
+          [43.302249395869836, 5.372524980161661],
+          13
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    } else if (city == "Creteil") {
+      try {
+        map = L.map("root").setView([48.7771486, 2.4530731], 13);
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
@@ -95,13 +150,6 @@ const getStations = (city = "Lyon") => {
         )
         .openPopup();
     }
-
-    marker = L.marker([45.779848493795605, 4.750634469274379])
-      .addTo(map)
-      .bindPopup(
-        "<b>Campus Région Numérique</b><br /><strong>IT-AKADEMY et les DFS26C ;)</strong>"
-      )
-      .openPopup();
   };
   xhttp.open(
     "GET",
