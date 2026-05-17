@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>BikeCity — Cartographie interactive des vélos en libre-service</title>
+    <meta name="description" content="BikeCity est une application cartographique de pointe permettant de visualiser la disponibilité en temps réel des vélos en libre-service en France, de manière sécurisée et anonymisée." />
+    <meta name="keywords" content="vélo, cartographie, openstreetmap, leaflet, jcdecaux, transport durable" />
+    <meta name="author" content="Zyrass" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Google Fonts Premium Imports (Outfit & Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  
+  <body>
+    <div class="app-container">
+      
+      <!-- Top Branding Header -->
+      <header class="app-header">
+        <div class="header-content">
+          <div class="logo-area">
+            <span class="logo-icon">🚲</span>
+            <div class="logo-text">
+              <h1>BikeCity</h1>
+              <span class="badge">V2.0 - Sécurisé</span>
+            </div>
+          </div>
+          <div class="clock-area">
+            <span class="clock-icon">🕒</span>
+            <span id="date" class="clock-time">Initialisation de l'heure...</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Dashboard Grid -->
+      <main class="app-main">
+        
+        <!-- Sidebar Controls Panel -->
+        <aside class="control-panel">
+          <section class="panel-section intro-section">
+            <h2 class="section-title">Présentation</h2>
+            <p id="paragraphePresention"></p>
+          </section>
+
+          <!-- Quick Access Actions -->
+          <section class="panel-section selection-section">
+            <h2 class="section-title">Villes favorites</h2>
+            <div class="quick-buttons-grid">
+              <button type="button" id="btnShowMap--Lyon" class="btn btn-primary-outline">
+                <span class="btn-icon">🦁</span> Lyon
+              </button>
+              <button type="button" id="btnShowMap--Marseille" class="btn btn-primary-outline">
+                <span class="btn-icon">🌊</span> Marseille
+              </button>
+              <button type="button" id="btnShowMap--Creteil" class="btn btn-primary-outline">
+                <span class="btn-icon">🌳</span> Créteil
+              </button>
+            </div>
+          </section>
+
+          <!-- Advanced Custom Search -->
+          <section class="panel-section search-section">
+            <h2 class="section-title">Recherche avancée</h2>
+            <form id="search-form" class="search-form">
+              <div class="form-group">
+                <label for="contract" class="form-label">Contrat JCDecaux</label>
+                <input
+                  id="contract"
+                  name="contract"
+                  type="text"
+                  placeholder="Ex: Toulouse, Nantes, Rouen..."
+                  autocomplete="off"
+                  class="form-input"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Rechercher la ville
+              </button>
+            </form>
+          </section>
+
+          <!-- Live Status Bar -->
+          <section class="panel-section status-section">
+            <h2 class="section-title">Statut de la connexion</h2>
+            <div id="status" role="status" class="status-info">
+              Démarrage en cours...
+            </div>
+          </section>
+        </aside>
+
+        <!-- Main Map Screen -->
+        <section class="map-screen" aria-label="Carte des stations de vélos">
+          <div class="map-wrapper card">
+            <div class="map__container" id="root">
+              <!-- La carte Leaflet sera injectée ici par init-app.js -->
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Clean Footer -->
+      <footer class="app-footer">
+        <p>&copy; 2026 BikeCity. Conçu avec soin pour un web performant et sécurisé.</p>
+        <span class="footer-note">Leaflet + OpenStreetMap + Netlify Proxy</span>
+      </footer>
+      
+    </div>
+
+    <!-- Vite ESM Main Script Loader -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
