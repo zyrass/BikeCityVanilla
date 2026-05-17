@@ -38,7 +38,7 @@ flowchart LR
     App -->|Rendu Cartographique| Map[Leaflet + OpenStreetMap]
     App -->|Appel local /api/stations| Proxy[Netlify Function Proxy]
     
-    subgraph Netlify Cloud (Serveur Sécurisé)
+    subgraph netlify_cloud ["Netlify Cloud (Serveur Sécurisé)"]
         Proxy -->|Validation Zod & Injection Clé API| Sec[Gatekeeper Validation]
         Sec -->|HTTP GET v3 API| JCDecaux[API Externe JCDecaux]
         JCDecaux -->|Données Brutes| Sec
