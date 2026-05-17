@@ -16,7 +16,18 @@
 
 Cette refonte majeure modernise une application JavaScript Vanilla rudimentaire en une application web professionnelle, hautement sécurisée, performante et prête pour le déploiement cloud sur Netlify, sans exposer aucune clé d'API côté navigateur.
 
+<br>
+
+> [!NOTE]
+> ### 🎨 Aperçu Conceptuel de l'Application (Généré avec Banana)
+> ![Illustration du projet BikeCity générée avec Banana](/banana_showcase.png)
+> *Cette illustration conceptuelle haut de gamme a été **générée avec l'outil de création visuelle Banana** pour s'harmoniser avec le code source et l'identité écolo-tech de BikeCity, représentant des lignes de code JavaScript lumineuses fusionnant avec des pins géolocalisés.*
+
+<br>
+
 ---
+
+<br>
 
 ## 🎯 Objectifs du Projet
 
@@ -26,14 +37,18 @@ Cette refonte majeure modernise une application JavaScript Vanilla rudimentaire 
 4. **Interface Responsive Premium** : Dashboard moderne structuré en grille CSS doté de pins SVG dynamiques.
 5. **Hygiène de Code** : Validation stricte sous ESLint 9 et commentaires didactiques.
 
+<br>
+
 ---
+
+<br>
 
 ## 🏗 Architecture Globale
 
 Le navigateur client n'interroge jamais directement JCDecaux. Il effectue des requêtes locales vers un proxy serverless hébergé par Netlify, garantissant l'anonymisation et le masquage des clés de sécurité :
 
 ```mermaid
-flowchart LR
+flowchart TB
     User[Utilisateur / Chrome] -->|Interagit| App[Application Vite Client]
     App -->|Rendu Cartographique| Map[Leaflet + OpenStreetMap]
     App -->|Appel local /api/stations| Proxy[Netlify Function Proxy]
@@ -49,7 +64,14 @@ flowchart LR
     App -->|Pins SVG dynamiques| Map
 ```
 
+> [!IMPORTANT]
+> *Sous ce logigramme de l'architecture globale, il est **indispensable de retenir que le flux de données circule de manière étanche** grâce à l'intermédiaire du **serveur proxy serverless sécurisé de Netlify**.*
+
+<br>
+
 ---
+
+<br>
 
 ## 🛠 Stack Technique
 
@@ -62,7 +84,11 @@ flowchart LR
 | **Netlify Functions** | Proxy d'API Serverless | Masquage de clé API et bypass CORS |
 | **Zod** | Validateur de schémas de données | Blocage en amont des entrées malveillantes |
 
+<br>
+
 ---
+
+<br>
 
 ## 💻 Installation & Lancement Local
 
@@ -89,7 +115,11 @@ npm run dev
 ```
 Ouvrez votre navigateur à l'adresse : **`http://localhost:8888`**
 
+<br>
+
 ---
+
+<br>
 
 ## 🛡 Focus Cybersécurité : Pourquoi la clé d'API ne doit pas résider dans le JavaScript client ?
 
@@ -107,7 +137,11 @@ Dans une application front-end traditionnelle, tout le code JavaScript envoyé a
 La clé API est stockée de manière sécurisée dans les variables d'environnement du serveur de Netlify.
 Le navigateur appelle uniquement la route locale `/api/stations`. Le proxy serverless intercepte l'appel, vérifie la légitimité des requêtes à l'aide de **Zod**, ajoute la clé d'API secrète, interroge JCDecaux, nettoie les données inutiles, applique une politique de cache de 30 secondes et renvoie uniquement l'essentiel au client.
 
+<br>
+
 ---
+
+<br>
 
 ## 📂 Documentation Complète
 
@@ -119,7 +153,11 @@ Pour aller plus loin, explorez nos guides techniques rédigés de manière exhau
 - 🚀 [04-Guide de Déploiement Cloud](file:///g:/www/projects/js/BikeCityVanilla/docs/04-deploiement.md)
 - 📊 [05-Rapport d'Audit & Notation de Production](file:///g:/www/projects/js/BikeCityVanilla/docs/05-audit.md)
 
+<br>
+
 ---
+
+<br>
 
 ## 🏷 Métadonnées & Tags de Version
 

@@ -2,7 +2,11 @@
 
 Ce document modélise avec une précision maximale le fonctionnement interne de **BikeCity**, depuis les interactions dans le navigateur de l'utilisateur jusqu'aux appels de l'API externe JCDecaux en passant par le proxy serverless de Netlify.
 
+<br>
+
 ---
+
+<br>
 
 ## 1. Diagramme de Séquence : Cycle de Vie d'une Requête
 
@@ -53,7 +57,14 @@ sequenceDiagram
     DOM-->>U: Affiche visuellement les stations sur la carte
 ```
 
+> [!IMPORTANT]
+> *Sous ce diagramme de séquence, il est **fondamental de comprendre que la clé d'API secrète reste confinée sur les serveurs de Netlify**, de sorte que **le navigateur client ne reçoit jamais la clé**.*
+
+<br>
+
 ---
+
+<br>
 
 ## 2. Diagramme d'État : Cycle de Vie de l'Interface
 
@@ -96,7 +107,14 @@ stateDiagram-v2
     AffichageErreur --> [*] : Fermeture de l'application
 ```
 
+> [!TIP]
+> *Dans ce diagramme d'état, il est **important de retenir que l'application réinitialise toujours proprement ses marqueurs de carte** à chaque transition d'état, évitant ainsi les **fuites de mémoire**.*
+
+<br>
+
 ---
+
+<br>
 
 ## 3. Flowchart : Logique Décisionnelle de la Netlify Function
 
@@ -134,4 +152,8 @@ flowchart TD
     style Err500 fill:#ef4444,stroke:#dc2626,stroke-width:1px,color:#fff
     style Err400 fill:#ef4444,stroke:#dc2626,stroke-width:1px,color:#fff
     style ErrProxy fill:#ef4444,stroke:#dc2626,stroke-width:1px,color:#fff
+```
+
+> [!CAUTION]
+> *Dans ce logigramme, il est **crucial de noter que tout échec de validation Zod interrompt immédiatement la requête**, protégeant ainsi l'API externe JCDecaux contre les **requêtes malformées ou malveillantes**.*
 ```

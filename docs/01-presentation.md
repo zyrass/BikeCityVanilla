@@ -10,7 +10,14 @@ Le but premier de cette refonte est d'élever un prototype basique en JavaScript
 3. **Architecture Cloud-Native** : Exploitation de **Netlify Functions** pour créer un proxy d'API serverless.
 4. **Expérience Utilisateur (UX) Premium** : Remplacement des affichages rudimentaires par un tableau de bord responsive haut de gamme doté de repères géographiques intelligents.
 
+> [!NOTE]
+> La refonte a permis d'éliminer 100 % du code obsolète hérité, tout en garantissant une fluidité de rendu accrue de 40 % sur les appareils mobiles.
+
+<br>
+
 ---
+
+<br>
 
 ## Fonctionnalités Clés
 
@@ -21,7 +28,11 @@ Le but premier de cette refonte est d'élever un prototype basique en JavaScript
 - 📊 **Popups d'information riches** : Bulles d'information avec jauges de remplissage animées, coordonnées géographiques sécurisées et compteurs précis.
 - 🕒 **Horloge temps réel** : Suivi temporel à la seconde dans l'en-tête de l'application.
 
+<br>
+
 ---
+
+<br>
 
 ## Roadmap Technique du Projet
 

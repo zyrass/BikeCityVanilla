@@ -2,7 +2,11 @@
 
 Ce guide détaille pas-à-pas comment faire tourner l'environnement de développement complet sur votre poste, et comment déployer l'application en production sur la plateforme **Netlify**.
 
+<br>
+
 ---
+
+<br>
 
 ## 1. Prérequis Système
 
@@ -10,7 +14,11 @@ Ce guide détaille pas-à-pas comment faire tourner l'environnement de développ
 - **NPM** : Installé conjointement avec Node.
 - **Netlify CLI** (Facultatif mais recommandé pour le dev local) : Pour exécuter le serveur local simulant parfaitement le cloud Netlify.
 
+<br>
+
 ---
+
+<br>
 
 ## 2. Lancement en Développement Local
 
@@ -43,7 +51,14 @@ Cette commande va lancer **Netlify CLI** sous le capot. Elle va :
 
 Ouvrez simplement votre navigateur sur : **`http://localhost:8888`**
 
+> [!TIP]
+> Pour le développement local, l'utilisation de `npm run dev` (Netlify Dev) est **vivement recommandée** car elle simule exactement le comportement des variables d'environnement de production sur votre machine locale.
+
+<br>
+
 ---
+
+<br>
 
 ## 3. Déploiement en Production sur Netlify
 
@@ -64,7 +79,11 @@ Ouvrez simplement votre navigateur sur : **`http://localhost:8888`**
 7. Cliquez sur **Deploy site**.
 8. Votre site est en ligne et 100% sécurisé !
 
+<br>
+
 ---
+
+<br>
 
 ## 4. Scripts Utilitaires Disponibles
 

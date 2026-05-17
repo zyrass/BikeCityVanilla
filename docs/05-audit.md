@@ -2,7 +2,11 @@
 
 Ce rapport présente l'évaluation technique et cybersécuritaire de l'application **BikeCity** après sa migration complète depuis le prototype original en Vanilla JS.
 
+<br>
+
 ---
+
+<br>
 
 ## 1. Synthèse Globale
 
@@ -16,7 +20,11 @@ Après refactoring, l'application est passée d'un état de prototype vulnérabl
 | 🛠 **Maintenabilité & Tooling** | **D** (07/20) | **A** (18.5/20) | Intégration de Flat ESLint 9, .env strict, scripts clairs |
 | **SCORE GLOBAL** | **23% (Note : E)** | **94% (Note : A+)** | **Migration réussie à l'état de Production-Ready** |
 
+<br>
+
 ---
+
+<br>
 
 ## 2. Analyse Détaillée par Axe
 
@@ -47,7 +55,14 @@ Après refactoring, l'application est passée d'un état de prototype vulnérabl
 - **Hygiène Git irréprochable** : Fichier `.gitignore` exhaustif incluant `.env` et les répertoires temporaires pour éviter toute fuite. Modèle `.env.example` clair documenté pour l'équipe technique.
 - **Commentaires JSDoc exhaustifs** : Présence de commentaires explicatifs, structurés et pédagogiques à travers tout le code source pour guider les futurs développeurs.
 
+> [!NOTE]
+> L'obtention d'une note globale de **94 % (Score A+)** témoigne d'un refactoring complet respectant les meilleures pratiques de l'industrie en matière de sécurité et d'ingénierie logicielle.
+
+<br>
+
 ---
+
+<br>
 
 ## 3. Plan d'Amélioration Future (Roadmap Qualité)
 

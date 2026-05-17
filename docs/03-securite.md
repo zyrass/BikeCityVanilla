@@ -26,7 +26,11 @@ Si des personnes malveillantes s'emparent de votre clé API :
 - **Frais financiers (Billing Abuse)** : Si l'API est payante ou facturée à l'usage, cela peut générer des milliers d'euros de facturation imprévue.
 - **Bannissement définitif** : Si l'attaquant effectue des opérations frauduleuses ou illégales avec votre clé, votre compte développeur sera révoqué et banni par le fournisseur.
 
+<br>
+
 ---
+
+<br>
 
 ## La Solution Professionnelle : Le Proxy Serverless (Netlify Functions)
 
@@ -47,6 +51,9 @@ Pour immuniser l'application, nous avons mis en œuvre une **architecture de con
        ▼
 [ Serveur API JCDecaux ]
 ```
+
+> [!IMPORTANT]
+> *Sous ce schéma conceptuel de flux sécurisé, il est **absolument primordial de remarquer que la communication chiffrée avec JCDecaux est confinée au backend**, éliminant ainsi toute **fuite potentielle d'identifiants**.*
 
 ### Avantages Majeurs du Proxy Serverless
 
