@@ -6,7 +6,7 @@ Dans la version originale de **BikeCity**, la clé d'API personnelle de JCDecaux
 
 ```javascript
 // EXTRAIT DE LA FAILLE DU PROTOTYPE ORIGINAL (app.js:93) :
-const API_KEY_PERSO = "your_secret_api_key_here";
+const API_KEY_PERSO = "your_exposed_api_key_was_here";
 ```
 
 ### Pourquoi c'est une faille de sécurité critique ?
